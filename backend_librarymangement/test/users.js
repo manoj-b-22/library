@@ -50,7 +50,7 @@ describe("Testing Users", function () {
   it("patch user", (done) => {
     chai
       .request(app)
-      .patch("/user/" + id)
+      .patch("/users/" + id)
       .send({ password: "mj@143" })
       .end((err, res) => {
         res.should.have.status(200);
