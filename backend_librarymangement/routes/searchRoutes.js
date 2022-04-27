@@ -5,6 +5,7 @@ const Book = require("../models/book");
 const Order = require("../models/order");
 const auth = require("../middlewares/auth");
 const client = require("../config/redis");
+// const solrClient = require("../config/solr");
 
 const router = Router();
 
@@ -27,6 +28,10 @@ router.get("/books", auth, async (req, res) => {
     filter[key] = { $regex: req.query[key], $options: "i" };
   }
   try {
+    // const solrBooks = await solrClient.query().q(filter) 
+    // if(solrBooks!={}){
+    //   res.json(solrBooks)
+    //}
     const books = await Book.find(filter);
     res.json(books);
   } catch (error) {
