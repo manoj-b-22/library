@@ -1,6 +1,9 @@
 const redis = require("redis");
 
-const client = redis.createClient({ socket: { port: 6379, host: 'redisdb' } });
+// let host = 'localhost'
+let host = 'redisdb'
+
+const client = redis.createClient({ socket: { port: 6379, host: host } });
 
 (async () => {
   await client.connect();
