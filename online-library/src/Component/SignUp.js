@@ -20,6 +20,7 @@ function SignUp() {
   const [error2, setError2] = useState("");
   const [val2, setVal2] = useState(false);
   const [isAdmin1, setisAdmin] = useState(false);
+  const [message, setMessage] = useState('');
   const history = useNavigate();
 
   // Code to set and validate username
@@ -170,6 +171,7 @@ function SignUp() {
               ></Checkbox>
             </Typography>
             <div style={{ marginTop: "20px" }} />
+            <Typography>{message}</Typography>
             <Button
               type="submit"
               onClick={SignUpUser}

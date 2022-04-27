@@ -23,6 +23,7 @@ function SignIn() {
   const [password1, setPassword] = useState("");
   const [error2, setError2] = useState("");
   const [val2, setVal2] = useState(false);
+  const [message, setMessage] = useState('');
   const history = useNavigate();
 
   // Code to set and validate username
@@ -172,7 +173,7 @@ function SignIn() {
               ></Checkbox>
             </Typography>
             <div style={{ marginTop: "20px" }} />
-
+            <Typography>{message}</Typography>
             <Button
               type="submit"
               onClick={LoginUser}
